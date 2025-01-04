@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    char oper;
+    double n1, n2, result;
+
+    cout << "Enter operator (+, -, *, /, ^): ";
+    cin >> oper;
+
+    cout << "Enter two operands: ";
+    cin >> n1 >> n2;
+
+    switch (oper) {
+        case '+':
+            result = n1 + n2;
+            break;
+        case '-':
+            result = n1 - n2;
+            break;
+        case '*':
+            result = n1 * n2;
+            break;
+        case '/':
+            if (n2 == 0) {
+                cout << "Error: Division by zero!" << endl;
+                return 1; 
+            }
+            result = n1 / n2;
+            break;
+        case '^':
+            result = pow(n1, n2); 
+            break;
+        default:
+            cout << "Error: Invalid operator" << endl;
+            return 1;
+    }
+
+    cout << "Result: " << result << endl;
+
+    return 0;
+}
